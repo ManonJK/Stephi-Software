@@ -1,5 +1,6 @@
 package Vue;
 
+import Controller.Controller;
 import org.jetbrains.annotations.Contract;
 
 import javax.swing.*;
@@ -17,6 +18,9 @@ public class Dashboard {
     private JLabel TitleLabel;
 
     public Dashboard(JFrame f){
+        NbTotalSales.setText(Controller.getVentesTot());
+        NbSellers.setText(Controller.getSellersNb());
+        NbSalesActual.setText(Controller.getSalesNb());
         TitleLabel.setFont(TitleLabel.getFont().deriveFont(17.0f));
 //        NbSellers.setText("coucou");
         SellersButton.addActionListener(new ActionListener() {
@@ -43,6 +47,4 @@ public class Dashboard {
         frame.setVisible(true);
         frame.setResizable(false);
     }
-
-
 }

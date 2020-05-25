@@ -1,10 +1,11 @@
 package Vue;
-
+import Controller.Controller;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class Clients {
     private JPanel Panel;
@@ -12,7 +13,7 @@ public class Clients {
     private JTextField idField;
     private JLabel TitleLabel;
     private JButton modifierButton;
-    private JTable table1;
+    private JTable clientsTable;
     private JButton voirLesBiensButton;
 
     public Clients(JFrame f){
@@ -45,19 +46,25 @@ public class Clients {
         supprimerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                int delete_client = JOptionPane.showConfirmDialog(null, "Etes-vous sûr de vouloir supprimer le client vendeur ?","Confirmation",JOptionPane.OK_CANCEL_OPTION);
+                int id_client = Integer.parseInt(idField.getText());
+                int del_client = JOptionPane.showConfirmDialog(null, "Etes-vous sûr de vouloir supprimer ce vendeur ? Cette action est irréversible et supprimera définitivement le compte choisi ainsi que tous les biens associés","Confirmation",JOptionPane.OK_CANCEL_OPTION);
+                if (del_client == 0){
+                    JOptionPane.showMessageDialog(null, Controller.del_client(id_client));
+                }
             }
         });
         modifierButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                EditClient.main("Clients");
+                int id = Integer.parseInt(idField.getText());
+                EditClient.main(id);
             }
         });
         voirLesBiensButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                BiensClient.main("Biens du client");
+                int id = Integer.parseInt(idField.getText());
+                BiensClient.main(id);
             }
         });
     }
@@ -73,7 +80,8 @@ public class Clients {
         frame.setResizable(false);
     }
 
-    private void createUIComponents() {
+    private void createUIComponents() throws SQLException {
         // TODO: place custom component creation code here
+        clientsTable = new JTable(Controller.buildTableModel(Controller.getAllClients()));
     }
 }

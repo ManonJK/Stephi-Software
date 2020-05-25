@@ -15,7 +15,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="7c41d" class="javax.swing.JTable" binding="table1" custom-create="true" default-binding="true">
+          <component id="7c41d" class="javax.swing.JTable" binding="clientsTable" custom-create="true">
             <constraints/>
             <properties/>
           </component>

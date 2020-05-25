@@ -1,10 +1,11 @@
 package Vue;
-
+import Controller.Controller;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class EditVente {
+    static int ID;
     private JPanel Panel;
     private JLabel TitleLabel;
     private JButton validerLesModificationsButton;
@@ -28,6 +29,17 @@ public class EditVente {
         instance = this;
         parent = f;
         TitleLabel.setFont(TitleLabel.getFont().deriveFont(17.0f));
+
+        Type.setText(Controller.getSaleInfos(ID, "type"));
+        Etage.setText(Controller.getSaleInfos(ID, "etage"));
+        Superficie.setText(Controller.getSaleInfos(ID, "superficie"));
+        NbPieces.setText(Controller.getSaleInfos(ID, "nb_pieces"));
+        Localisation.setText(Controller.getSaleInfos(ID, "localisation"));
+        Description.setText(Controller.getSaleInfos(ID, "descriptif"));
+        PrixMin.setText(Controller.getSaleInfos(ID, "prix_min"));
+        PrixMax.setText(Controller.getSaleInfos(ID, "prix_max"));
+        PrixVente.setText(Controller.getSaleInfos(ID, "prix_vente"));
+
         annulerLesModificationsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -60,7 +72,8 @@ public class EditVente {
         // TODO: place custom component creation code here
     }
 
-    public static void main(String args, int id) {
+    public static void main(int id) {
+        ID = id;
         JFrame frame = new JFrame("Modifier la vente");
         frame.setContentPane(new EditVente(frame).Panel);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

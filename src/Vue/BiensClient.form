@@ -15,7 +15,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="d48f2" class="javax.swing.JTable" binding="table1" custom-create="true" default-binding="true">
+          <component id="d48f2" class="javax.swing.JTable" binding="biensTable" custom-create="true">
             <constraints/>
             <properties/>
           </component>
@@ -29,7 +29,7 @@
           <text value="Id de la vente : "/>
         </properties>
       </component>
-      <component id="cbd7d" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="cbd7d" class="javax.swing.JTextField" binding="venteID">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
