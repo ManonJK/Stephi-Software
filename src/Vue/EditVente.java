@@ -49,7 +49,8 @@ public class EditVente {
         ouiRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                EditDep.main("Editer la dépendance");
+                int prout = Controller.recupID(ID);
+                EditDep.main(prout);
             }
         });
     }

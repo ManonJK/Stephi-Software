@@ -1,43 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="App:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="21409637-12aa-4a66-bf9f-3afbe112b332" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/Connection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/DateChooser.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/DateChooser.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jcalendar_1_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jcalendar_1_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jdatepicker_1_3_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jdatepicker_1_3_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/App_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/spring_security_crypto_5_3_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/DateChooser.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jcalendar_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jdatepicker_1_3_4.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/App.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Biens$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Biens$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Biens$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Biens$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Biens$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Biens$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Biens.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Biens.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/BiensClient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/BiensClient$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/BiensClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/BiensClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Clients$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Clients$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Clients$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Clients$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Clients$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Clients$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Clients$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Clients$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Clients.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Clients.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Dashboard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Dashboard$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Dashboard$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Dashboard$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Dashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Dashboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Connexion$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Connexion$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Connexion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Connexion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditClient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditClient$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditVente$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditVente$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditDep$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditDep$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditDep.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditDep.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditVente$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditVente$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditVente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditVente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vue/Biens.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/Biens.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vue/Biens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/Biens.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vue/BiensClient.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/BiensClient.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vue/BiensClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/BiensClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vue/Clients.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/Clients.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vue/Clients.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/Clients.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vue/Dashboard.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/Dashboard.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vue/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vue/EditClient.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/EditClient.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vue/Connexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/Connexion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vue/EditClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/EditClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vue/EditDep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/EditDep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vue/EditVente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/EditVente.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,13 +58,14 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="323" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BDD/Stephi_place_mysql.sql" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spring-security-crypto-5.3.2.RELEASE.jar!/" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -124,7 +115,22 @@
       <workItem from="1588662298838" duration="1891000" />
       <workItem from="1588767773387" duration="3486000" />
       <workItem from="1589958993212" duration="982000" />
+      <workItem from="1590406742911" duration="113000" />
+      <workItem from="1590478889804" duration="67000" />
+      <workItem from="1590652361535" duration="2791000" />
+      <workItem from="1590655438305" duration="981000" />
+      <workItem from="1590667348097" duration="1713000" />
+      <workItem from="1590737084262" duration="2951000" />
+      <workItem from="1590755393147" duration="915000" />
     </task>
+    <task id="LOCAL-00001" summary="Push qui aurait dû être fait depuis longtemps&#10;Manque Documents, dépendance, photos">
+      <created>1590406834245</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590406834245</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,5 +148,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Push qui aurait dû être fait depuis longtemps&#10;Manque Documents, dépendance, photos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Push qui aurait dû être fait depuis longtemps&#10;Manque Documents, dépendance, photos" />
   </component>
 </project>

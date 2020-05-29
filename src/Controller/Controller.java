@@ -5,17 +5,79 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.Vector;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 
 public class Controller {
 
     public static ResultSet Info;
+
+    public static Integer recupID(Integer ID){
+        int message = 0;
+        try {
+            Connection.connect();
+            Info = Connection.state.executeQuery("SELECT d.id FROM dependances_biens d JOIN biens b ON d.id_bien=b.id JOIN ventes v ON b.id=v.id_bien WHERE v.id = '"+ ID +"'");
+            while(Info.next()){
+                message = Info.getInt("d.id");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+
+        }
+        return message;
+    }
+
+    public static String creaDep(int id_bien, String type, String superficie) {
+        String message = "";
+        try {
+            Connection.connect();
+            Info = Connection.state.executeQuery("INSERT INTO dependances_biens (id_bien, id_dependance, superficie) VALUES ('" +id_bien +"', '" +  type +"', '"+ superficie +"') ON DUPLICATE KEY UPDATE superficie = '"+ superficie + "'");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+
+        }
+        return message;
+    }
+
+
+    public static Boolean Connexion(String email, String password){
+        boolean message = false;
+        try{
+            Connection.connect();
+            String BDDpasswd = "";
+            Info = Connection.state.executeQuery ("SELECT password FROM users WHERE email= '" + email + "'");
+            while (Info.next()){
+                BDDpasswd = Info.getString("password");
+            }
+            System.out.println(BDDpasswd);
+            System.out.println(password);
+
+            if (BCrypt.checkpw(password, BDDpasswd)){
+                System.out.println("It matches");
+                message = true;}
+            else {
+                System.out.println("It does not match");
+                message=false;
+            }
+
+
+        }catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println(e + " - Erreur lors de la lecture dans la BDD");
+        }
+        return message;
+    }
+
 
     //Affichage nombre de ventes total
     public static String getVentesTot(){
         String message = "";
         try{
             Connection.connect();
-            Info = Connection.state.executeQuery("SELECT COUNT(*) AS ventes FROM ventes where status = 'vendu'");
+            Info = Connection.state.executeQuery("SELECT COUNT(*) AS ventes FROM ventes where status = 'Vendu'");
             while (Info.next()){
                 message = Info.getString("ventes");
             }
@@ -35,7 +97,7 @@ public class Controller {
         String message = "";
         try{
             Connection.connect();
-            Info = Connection.state.executeQuery("SELECT COUNT(*) AS ventes FROM ventes where status = 'vendu' and ");
+            Info = Connection.state.executeQuery("SELECT COUNT(*) AS ventes FROM ventes where status = 'Vendu' and ");
             while (Info.next()){
                 message = Info.getString("ventes");
             }
@@ -95,7 +157,7 @@ public class Controller {
 
         try{
             Connection.connect();
-            Info = Connection.state.executeQuery("SELECT id, nom, prenom, mail, phone FROM users WHERE archivé = false");
+            Info = Connection.state.executeQuery("SELECT id, nom, prenom, email, phone FROM users where id_agent is not null");
 
         }catch (SQLException e) {
             e.printStackTrace();
@@ -113,7 +175,7 @@ public class Controller {
 
         try {
             Connection.connect();
-            Info = Connection.state.executeQuery("SELECT b.id, CONCAT(u.nom,' ',u.prenom) AS propriétaire, b.type, b.superficie, b.localisation, b.prix_vente prix FROM biens b JOIN users u ON b.id_user=u.id JOIN ventes v ON v.id_bien = b.id WHERE v.status = 'En cours'");
+            Info = Connection.state.executeQuery("SELECT b.id, CONCAT(u.nom,' ',u.prenom) AS propriétaire, t.titre as type, b.superficie, b.localisation, b.prix_vente prix FROM biens b JOIN users u ON b.id_user=u.id JOIN ventes v ON v.id_bien = b.id JOIN types t ON t.id=b.id_type WHERE v.status = 'En cours'");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -145,11 +207,11 @@ public class Controller {
     }
 
     //Modifier les infos d'un client
-    public static String modifyClient(int id, String nom,String prenom,String mail,String adresse,String phone,String birth){
+    public static String modifyClient(int id, String nom,String prenom,String mail,String phone,String birth){
         String message = "";
         try{
             Connection.connect();
-            Connection.state.executeUpdate("UPDATE users set nom = '" + nom + "', prenom ='"+prenom+"', mail ='"+mail+"', adresse='"+adresse+"', phone='"+phone+"', birth_date = '"+birth+"' where id = '" + id + "'");
+            Connection.state.executeUpdate("UPDATE users set nom = '" + nom + "', prenom ='"+prenom+"', email ='"+mail+"', phone='"+phone+"', birth_date = '"+birth+"' where id = '" + id + "'");
             message = "Les informations du client ont bien été enregistrées";
 
         }catch (SQLException e) {
@@ -185,8 +247,8 @@ public class Controller {
         String message = "";
         try{
             Connection.connect();
-            Connection.state.executeUpdate("UPDATE users set archivé = true where id = '" + id + "'");
-            Connection.state.executeUpdate("UPDATE ventes v join biens b ON v.id_bien = b.id set status = 'Annulée' where b.id_user = '" + id + "'");
+            Connection.state.executeUpdate("UPDATE users set archive = true where id = '" + id + "'");
+            Connection.state.executeUpdate("UPDATE ventes v join biens b ON v.id_bien = b.id set status = 'Annulée' where b.id_user = '" + id + "' AND v.status = 'En cours'");
             message = "Le compte de l'utilisateur a bien été supprimé";
 
         }catch (SQLException e) {
@@ -204,7 +266,7 @@ public class Controller {
     public static ResultSet getUserBiens(int id){
         try {
             Connection.connect();
-            Info = Connection.state.executeQuery("SELECT v.id, b.type, b.superficie, b.localisation, b.prix_vente prix, v.status FROM biens b JOIN users u ON b.id_user=u.id JOIN ventes v ON v.id_bien = b.id WHERE u.id = '"+id+"'");
+            Info = Connection.state.executeQuery("SELECT v.id, t.titre as type, b.superficie, b.localisation, b.prix_vente prix, v.status FROM biens b JOIN users u ON b.id_user=u.id JOIN ventes v ON v.id_bien = b.id JOIN types t ON t.id=b.id_type WHERE u.id = '"+id+"'");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -221,7 +283,7 @@ public class Controller {
         String message = "";
         try{
             Connection.connect();
-            Info = Connection.state.executeQuery("SELECT * FROM biens where id = '" + id + "'");
+            Info = Connection.state.executeQuery("SELECT b.*, t.titre as type FROM biens b join types t on b.id_type=t.id where b.id = '" + id + "'");
             while (Info.next()){
                 message = Info.getString(info);
             }

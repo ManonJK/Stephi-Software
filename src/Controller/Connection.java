@@ -10,7 +10,7 @@ public class Connection {
 
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/stephi_place?useSSL=false","root",""); //3306 est le port par défaut de mysql / 3308 est le port par defaut de MariaDB
+            con = DriverManager.getConnection("jdbc:mysql://192.168.65.201:3306/stephi_place?useSSL=false","connect","root13@"); //3306 est le port par défaut de mysql / 3308 est le port par defaut de MariaDB
             state = con.createStatement();
 
         }catch(Exception e){ System.out.println(e);}

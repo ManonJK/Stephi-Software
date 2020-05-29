@@ -1,5 +1,6 @@
 package Vue;
 
+import Controller.Controller;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,7 +18,11 @@ public class Connexion {
         seConnecterButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                Dashboard.main("Dashboard");
+                String email = textField1.getText();
+                String password = new String(passwordField1.getPassword());
+                if (Controller.Connexion(email, password)){
+                    Dashboard.main("Dashboard");
+                }
             }
         });
     }

@@ -1,9 +1,6 @@
 package Vue;
 
 import Controller.Controller;
-import com.toedter.calendar.JDateChooser;
-import datechooser.beans.DateChooserCombo;
-import org.jdatepicker.impl.JDatePickerImpl;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -30,8 +27,7 @@ public class EditClient {
 
         clientName.setText(Controller.getclientInfos(ID, "nom"));
         clientFN.setText(Controller.getclientInfos(ID, "prenom"));
-        clientAdd.setText(Controller.getclientInfos(ID, "adresse"));
-        clientMail.setText(Controller.getclientInfos(ID, "mail"));
+        clientMail.setText(Controller.getclientInfos(ID, "email"));
         clientPhone.setText(Controller.getclientInfos(ID, "phone"));
         clientBD.setText(Controller.getclientInfos(ID, "birth_date"));
 
@@ -47,10 +43,9 @@ public class EditClient {
                 String nom = clientName.getText();
                 String prenom = clientFN.getText();
                 String mail = clientMail.getText();
-                String adresse = clientAdd.getText();
                 String phone = clientPhone.getText();
                 String birth = clientBD.getText();
-                JOptionPane.showMessageDialog(null,Controller.modifyClient(ID, nom, prenom, mail, adresse, phone, birth));
+                JOptionPane.showMessageDialog(null,Controller.modifyClient(ID, nom, prenom, mail, phone, birth));
             }
         });
     }
