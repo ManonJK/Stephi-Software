@@ -6,27 +6,15 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21409637-12aa-4a66-bf9f-3afbe112b332" name="Default Changelist" comment="">
+    <list default="true" id="21409637-12aa-4a66-bf9f-3afbe112b332" name="Default Changelist" comment="Ajout connection + adaptation à la bdd">
       <change afterPath="$PROJECT_DIR$/.idea/artifacts/App_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/spring_security_crypto_5_3_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/DateChooser.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jcalendar_1_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jdatepicker_1_3_4.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/App.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Connexion$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Connexion$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Connexion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Connexion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditClient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditClient$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditDep$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditDep$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditDep.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditDep.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditVente$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditVente$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditVente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditVente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Connection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vue/Connexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/Connexion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vue/EditClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/EditClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vue/EditDep.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/EditDep.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vue/EditDep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/EditDep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vue/EditVente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/EditVente.java" afterDir="false" />
     </list>
@@ -121,7 +109,7 @@
       <workItem from="1590655438305" duration="981000" />
       <workItem from="1590667348097" duration="1713000" />
       <workItem from="1590737084262" duration="2951000" />
-      <workItem from="1590755393147" duration="915000" />
+      <workItem from="1590755393147" duration="5946000" />
     </task>
     <task id="LOCAL-00001" summary="Push qui aurait dû être fait depuis longtemps&#10;Manque Documents, dépendance, photos">
       <created>1590406834245</created>
@@ -130,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590406834245</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Ajout connection + adaptation à la bdd">
+      <created>1590757569268</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1590757569268</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +146,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Push qui aurait dû être fait depuis longtemps&#10;Manque Documents, dépendance, photos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Push qui aurait dû être fait depuis longtemps&#10;Manque Documents, dépendance, photos" />
+    <MESSAGE value="Ajout connection + adaptation à la bdd" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout connection + adaptation à la bdd" />
   </component>
 </project>

@@ -16,7 +16,7 @@
           <text value="Modifier / Ajouter la dépendance"/>
         </properties>
       </component>
-      <component id="46816" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
+      <component id="46816" class="javax.swing.JComboBox" binding="comboTypes" custom-create="true">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>

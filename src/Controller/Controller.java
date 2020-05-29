@@ -11,13 +11,27 @@ public class Controller {
 
     public static ResultSet Info;
 
-    public static Integer recupID(Integer ID){
+    public static ResultSet getDepTypes(){
+        try{
+            Connection.connect();
+            Info = Connection.state.executeQuery("SELECT nom FROM dependances");
+
+        }catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println(e + " - Erreur lors de la lecture dans la BDD");
+        }
+
+        return Info;
+    }
+
+    public static Integer recupID(String info, int ID){
         int message = 0;
         try {
             Connection.connect();
-            Info = Connection.state.executeQuery("SELECT d.id FROM dependances_biens d JOIN biens b ON d.id_bien=b.id JOIN ventes v ON b.id=v.id_bien WHERE v.id = '"+ ID +"'");
+            Info = Connection.state.executeQuery("SELECT d.id_bien, d.id_dependance FROM dependances_biens d JOIN biens b ON d.id_bien=b.id JOIN ventes v ON b.id=v.id_bien WHERE v.id = '"+ ID +"'");
             while(Info.next()){
-                message = Info.getInt("d.id");
+                message = Info.getInt(info);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -27,11 +41,18 @@ public class Controller {
         return message;
     }
 
-    public static String creaDep(int id_bien, String type, String superficie) {
+    public static String creaDep(int id_bien, String type, int superficie) {
         String message = "";
-        try {
+        int id_type =0;
+        try{
             Connection.connect();
-            Info = Connection.state.executeQuery("INSERT INTO dependances_biens (id_bien, id_dependance, superficie) VALUES ('" +id_bien +"', '" +  type +"', '"+ superficie +"') ON DUPLICATE KEY UPDATE superficie = '"+ superficie + "'");
+            ResultSet dep = Connection.state.executeQuery("SELECT id FROM dependances WHERE nom='" + type + "'");
+            while (dep.next()){
+                id_type = dep.getInt("id");
+            }
+
+            Connection.connect();
+            Connection.state.executeUpdate("INSERT INTO dependances_biens (id_bien, id_dependance, superficie) VALUES ('" +id_bien +"', '" +  id_type +"', '"+ superficie +"') ON DUPLICATE KEY UPDATE superficie = '"+ superficie + "'");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -47,7 +68,7 @@ public class Controller {
         try{
             Connection.connect();
             String BDDpasswd = "";
-            Info = Connection.state.executeQuery ("SELECT password FROM users WHERE email= '" + email + "'");
+            Info = Connection.state.executeQuery ("SELECT password FROM agents WHERE email= '" + email + "'");
             while (Info.next()){
                 BDDpasswd = Info.getString("password");
             }

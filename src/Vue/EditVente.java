@@ -49,8 +49,9 @@ public class EditVente {
         ouiRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                int prout = Controller.recupID(ID);
-                EditDep.main(prout);
+                int id_dep = Controller.recupID("id_dependance", ID);
+                int id_bien = Controller.recupID("id_bien", ID);
+                EditDep.main(id_dep, id_bien);
             }
         });
     }
