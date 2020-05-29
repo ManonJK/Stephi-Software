@@ -11,6 +11,39 @@ public class Controller {
 
     public static ResultSet Info;
 
+    public static String getDepSize(int id_bien, int id_dep){
+        String message="";
+        try{
+            Connection.connect();
+            Info = Connection.state.executeQuery("SELECT superficie FROM dependances_biens WHERE id_bien='" + id_bien +"' AND id_dependance='"+id_dep+"'");
+            while(Info.next()){
+                message=Info.getString("superficie");
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println(e + " - Erreur lors de la lecture dans la BDD");
+        }
+        System.out.println("Superficie de la dep : " + message);
+        return message;
+    }
+
+    public static ResultSet getBienDeps(int id){
+        try{
+            Connection.connect();
+            Info = Connection.state.executeQuery("SELECT d.nom as type, dep.superficie FROM dependances_biens dep join dependances d on dep.id_dependance=d.id where id_bien = '" + id +"'");
+
+        }catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println(e + " - Erreur lors de la lecture dans la BDD");
+        }
+
+        return Info;
+        // Dans la vue on construit la table de réservations comme ceci :
+        // JTable table = new JTable(buildTableModel(rs));
+    }
+
     public static ResultSet getDepTypes(){
         try{
             Connection.connect();
@@ -25,6 +58,21 @@ public class Controller {
         return Info;
     }
 
+    public static Integer getDepIdfromName(String name){
+        int message = 0;
+        try{
+            Connection.connect();
+            Info = Connection.state.executeQuery("SELECT id FROM dependances WHERE nom='" + name +"'");
+            while(Info.next()){
+                message = Info.getInt("id");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Nom de dep que je passe ne paramètre : " + name + "\nid de dépendance que je recupère dans ma fonction : " + message);
+        return message;
+    }
+
     public static Integer recupID(String info, int ID){
         int message = 0;
         try {
@@ -35,8 +83,6 @@ public class Controller {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (Exception e) {
-
         }
         return message;
     }

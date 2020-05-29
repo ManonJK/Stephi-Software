@@ -18,6 +18,9 @@ public class EditDep {
     private JFrame parent;
 
     public EditDep (JFrame f){
+        System.out.println("id_bien : " + ID_bien);
+        System.out.println("id_dep : " +ID_dep);
+        textField1.setText(Controller.getDepSize(ID_bien, ID_dep));
         parent = f;
         TitleLabel.setFont(TitleLabel.getFont().deriveFont(17.0f));
         annulerButton.addActionListener(new ActionListener() {
