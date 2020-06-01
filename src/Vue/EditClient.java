@@ -12,7 +12,6 @@ public class EditClient {
     private JTextField clientName;
     private JTextField clientFN;
     private JTextField clientMail;
-    private JTextField clientAdd;
     private JLabel TitleLabel;
     private JButton validerButton;
     private JButton annulerButton;

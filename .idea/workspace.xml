@@ -8,16 +8,21 @@
   <component name="ChangeListManager">
     <list default="true" id="21409637-12aa-4a66-bf9f-3afbe112b332" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditDep$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditDep$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditDep.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditDep.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditVente$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditVente$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditVente$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditVente$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditVente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditVente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Biens$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Biens$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Biens$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Biens$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Biens$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Biens$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/Biens.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/Biens.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/BiensClient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/BiensClient$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/BiensClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/BiensClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditClient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditClient$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App/Vue/EditClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App/Vue/EditClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vue/EditDep.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/EditDep.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vue/EditDep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/EditDep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vue/EditVente.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/EditVente.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vue/EditVente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/EditVente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vue/Biens.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/Biens.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vue/Biens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/Biens.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vue/BiensClient.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/BiensClient.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vue/BiensClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/BiensClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vue/EditClient.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/EditClient.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vue/EditClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/EditClient.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +115,8 @@
       <workItem from="1590655438305" duration="981000" />
       <workItem from="1590667348097" duration="1713000" />
       <workItem from="1590737084262" duration="2951000" />
-      <workItem from="1590755393147" duration="10198000" />
+      <workItem from="1590755393147" duration="10290000" />
+      <workItem from="1590997901215" duration="4033000" />
     </task>
     <task id="LOCAL-00001" summary="Push qui aurait dû être fait depuis longtemps&#10;Manque Documents, dépendance, photos">
       <created>1590406834245</created>
@@ -133,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590762883168</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Gestion des dépendances">
+      <created>1590767104474</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590767104474</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +168,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Push qui aurait dû être fait depuis longtemps&#10;Manque Documents, dépendance, photos" />
     <MESSAGE value="Ajout connection + adaptation à la bdd" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout connection + adaptation à la bdd" />
+    <MESSAGE value="Gestion des dépendances" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gestion des dépendances" />
   </component>
 </project>

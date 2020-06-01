@@ -16,6 +16,7 @@ public class Biens {
     private JTextField idField;
     private JButton modifierButton;
     private JButton annulerLaVenteButton;
+    private JButton venduButton;
     private JFrame parent;
 
     public Biens(JFrame f){
@@ -49,10 +50,12 @@ public class Biens {
                 if (idField.getText().equals("")){
                     modifierButton.setEnabled(false);
                     annulerLaVenteButton.setEnabled(false);
+                    venduButton.setEnabled(false);
                 }
                 else {
                     modifierButton.setEnabled(true);
                     annulerLaVenteButton.setEnabled(true);
+                    venduButton.setEnabled(true);
                 }
 
             }
@@ -62,6 +65,18 @@ public class Biens {
             public void actionPerformed(ActionEvent actionEvent) {
                 int id = Integer.parseInt(idField.getText());
                 EditVente.main(id);
+            }
+        });
+        venduButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                int sale = Integer.parseInt(idField.getText());
+                int cancel_sale = JOptionPane.showConfirmDialog(null, "Etes-vous sûr de vouloir finaliser la vente de ce bien ? Cette action est irréversible","Confirmation",JOptionPane.OK_CANCEL_OPTION);
+                if (cancel_sale == 0){
+                    JOptionPane.showMessageDialog(null, Controller.setVendu(sale));
+                    parent.dispose();
+                    main("Ventes");
+                }
             }
         });
     }

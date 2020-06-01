@@ -9,7 +9,9 @@ import org.springframework.security.crypto.bcrypt.BCrypt;
 
 public class Controller {
 
+    public static int agent_id;
     public static ResultSet Info;
+
 
     public static String getDepSize(int id_bien, int id_dep){
         String message="";
@@ -114,9 +116,10 @@ public class Controller {
         try{
             Connection.connect();
             String BDDpasswd = "";
-            Info = Connection.state.executeQuery ("SELECT password FROM agents WHERE email= '" + email + "'");
+            Info = Connection.state.executeQuery ("SELECT password, id FROM agents WHERE email= '" + email + "'");
             while (Info.next()){
                 BDDpasswd = Info.getString("password");
+                agent_id = Info.getInt("id");
             }
             System.out.println(BDDpasswd);
             System.out.println(password);
@@ -144,7 +147,7 @@ public class Controller {
         String message = "";
         try{
             Connection.connect();
-            Info = Connection.state.executeQuery("SELECT COUNT(*) AS ventes FROM ventes where status = 'Vendu'");
+            Info = Connection.state.executeQuery("SELECT COUNT(*) AS ventes FROM ventes where status = 'Vendu' and id_bien in (SELECT id from biens where id_user in (select id from users where id_agent='" + agent_id +"'))");
             while (Info.next()){
                 message = Info.getString("ventes");
             }
@@ -184,7 +187,7 @@ public class Controller {
         String message = "";
         try{
             Connection.connect();
-            Info = Connection.state.executeQuery("SELECT COUNT(*) AS nb_sellers FROM users where id IN (SELECT id_user from biens)");
+            Info = Connection.state.executeQuery("SELECT COUNT(*) AS nb_sellers FROM users where id IN (SELECT id_user from biens) and id_agent='" + agent_id +"'");
             while (Info.next()){
                 message = Info.getString("nb_sellers");
             }
@@ -204,7 +207,11 @@ public class Controller {
         String message = "";
         try{
             Connection.connect();
-            Info = Connection.state.executeQuery("SELECT COUNT(*) AS nb_sales FROM biens b JOIN ventes v ON b.id = v.id_bien WHERE v.status = 'Vendu'");
+
+
+
+
+            Info = Connection.state.executeQuery("select count(*) as nb_sales from ventes where status='En Cours' and id_bien in(select id from biens where id_user in (select id from users where id_agent=" + agent_id +"))");
             while (Info.next()){
                 message = Info.getString("nb_sales");
             }
@@ -224,7 +231,7 @@ public class Controller {
 
         try{
             Connection.connect();
-            Info = Connection.state.executeQuery("SELECT id, nom, prenom, email, phone FROM users where id_agent is not null");
+            Info = Connection.state.executeQuery("SELECT id, nom, prenom, email, phone FROM users where id_agent = '" + agent_id +"'");
 
         }catch (SQLException e) {
             e.printStackTrace();
@@ -242,7 +249,7 @@ public class Controller {
 
         try {
             Connection.connect();
-            Info = Connection.state.executeQuery("SELECT b.id, CONCAT(u.nom,' ',u.prenom) AS propriétaire, t.titre as type, b.superficie, b.localisation, b.prix_vente prix FROM biens b JOIN users u ON b.id_user=u.id JOIN ventes v ON v.id_bien = b.id JOIN types t ON t.id=b.id_type WHERE v.status = 'En cours'");
+            Info = Connection.state.executeQuery("SELECT b.id, CONCAT(u.nom,' ',u.prenom) AS propriétaire, t.titre as type, b.superficie, b.localisation, b.prix_vente prix FROM biens b JOIN users u ON b.id_user=u.id JOIN ventes v ON v.id_bien = b.id JOIN types t ON t.id=b.id_type WHERE v.status = 'En cours' AND u.id_agent='"+ agent_id +"'");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -305,6 +312,25 @@ public class Controller {
         } catch (Exception e) {
             System.out.println(e + " - Erreur lors de l'écriture dans la BDD");
             message = "Il y a eu une erreur, la vente n'a pas pu être annulée";
+        }
+        return message;
+    }
+
+
+    //Annuler une vente
+    public static String setVendu(int id){
+        String message = "";
+        try{
+            Connection.connect();
+            Connection.state.executeUpdate("UPDATE ventes set status = 'Vendu' where id = '" + id + "'");
+            message = "La vente a bien été finalisée";
+
+        }catch (SQLException e) {
+            e.printStackTrace();
+            message = "Il y a eu une erreur, la vente n'a pas pu être finalisée";
+        } catch (Exception e) {
+            System.out.println(e + " - Erreur lors de l'écriture dans la BDD");
+            message = "Il y a eu une erreur, la vente n'a pas pu être finalisée";
         }
         return message;
     }
