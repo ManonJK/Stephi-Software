@@ -231,7 +231,7 @@ public class Controller {
 
         try{
             Connection.connect();
-            Info = Connection.state.executeQuery("SELECT id, nom, prenom, email, phone FROM users where id_agent = '" + agent_id +"'");
+            Info = Connection.state.executeQuery("SELECT id, nom, prenom, email, phone FROM users where archive=false and id_agent = '" + agent_id +"'");
 
         }catch (SQLException e) {
             e.printStackTrace();
@@ -249,7 +249,7 @@ public class Controller {
 
         try {
             Connection.connect();
-            Info = Connection.state.executeQuery("SELECT b.id, CONCAT(u.nom,' ',u.prenom) AS propriétaire, t.titre as type, b.superficie, b.localisation, b.prix_vente prix FROM biens b JOIN users u ON b.id_user=u.id JOIN ventes v ON v.id_bien = b.id JOIN types t ON t.id=b.id_type WHERE v.status = 'En cours' AND u.id_agent='"+ agent_id +"'");
+            Info = Connection.state.executeQuery("SELECT v.id, CONCAT(u.nom,' ',u.prenom) AS propriétaire, t.titre as type, b.superficie, b.localisation, b.prix_vente prix FROM biens b JOIN users u ON b.id_user=u.id JOIN ventes v ON v.id_bien = b.id JOIN types t ON t.id=b.id_type WHERE u.archive=false and v.status = 'En cours' AND u.id_agent='"+ agent_id +"'");
 
         } catch (SQLException e) {
             e.printStackTrace();

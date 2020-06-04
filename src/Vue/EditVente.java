@@ -92,9 +92,9 @@ public class EditVente {
     private void createUIComponents() throws SQLException {
         // TODO: place custom component creation code here
 //        int id_dep = Controller.recupID("id_dependance", ID);
-        int id_bien = Integer.parseInt(Controller.getSaleInfos(ID, "id"));
+//        int id_bien = Integer.parseInt(Controller.getSaleInfos(ID, "id"));
 //        System.out.println(id_bien);
-        depTable = new JTable(Controller.buildTableModel(Controller.getBienDeps(id_bien)));
+        depTable = new JTable(Controller.buildTableModel(Controller.getBienDeps(ID)));
     }
 
     public static void main(int id) {
