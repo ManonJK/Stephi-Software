@@ -376,7 +376,7 @@ public class Controller {
         String message = "";
         try{
             Connection.connect();
-            Info = Connection.state.executeQuery("SELECT b.*, t.titre as type FROM biens b join types t on b.id_type=t.id where b.id = '" + id + "'");
+            Info = Connection.state.executeQuery("SELECT b.*, t.titre as type FROM biens b join types t on b.id_type=t.id join ventes v on v.id_bien=b.id where v.id = '" + id + "'");
             while (Info.next()){
                 message = Info.getString(info);
             }
